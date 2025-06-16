@@ -1,0 +1,26 @@
+#class Point:
+#class Location:	
+class Point:
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
+class Location:
+	def __init__(self, local, dest):
+		self.local = local
+		self.dest = dest
+	def refloc(self):
+		rx = -self.local.x
+		ry = self.local.y
+		return Point(rx, ry)
+	def display(self):
+		print(f"Original location: {self.local.x} {self.local.y}")
+		rp = self.refloc()
+		print(f"Reflected location: {rp.x} {rp.y}")
+x1 = int(input("Enter x1 value of location: "))
+y1 = int(input("Enter y1 value of location: "))
+x2 = int(input("Enter x2 value of destination: "))
+y2 = int(input("Enter y2 value of destination: "))
+lp = Point(x1, y1)
+dp = Point(x2, y2)
+locobj = Location(lp, dp)
+locobj.display()

@@ -1,0 +1,14 @@
+def count_up_to_ten():
+	counter=0
+	while True:
+		if counter==10:
+			raise Exception("Counter has reached 10")
+		yield counter
+		counter +=1
+gen=count_up_to_ten()
+try:
+	while True:
+		num=next(gen)
+		print(num)
+except Exception as e:
+	print(e)# Prints message raised by Exception

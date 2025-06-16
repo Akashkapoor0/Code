@@ -1,0 +1,27 @@
+class MyClass:
+	def __init__(self, name, age):
+		self.name = name
+		self.age = age
+	def __str__(self):
+		return f"{self.name} is {self.age} years old."
+	def __repr__(self):
+		return f"MyClass({self.name}, {self.age})"
+	def __doc__(self):
+		return type(self).__doc__
+	def __dict__(self):
+		return type(self).__dict__
+	def __name__(self):
+		return type(self).__name__
+	def __bases__(self):
+		return type(self).__bases__
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+obj = MyClass(name, age)
+print(obj)
+print(repr(obj))
+print(type(obj))
+
+print(obj.__doc__)
+print(obj.__dict__)
+print(obj.__name__)
+print(obj.__bases__)

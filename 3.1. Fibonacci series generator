@@ -1,0 +1,11 @@
+def fibonacci(limit):
+	a=0
+	b=1
+	while a<=limit:
+		yield a
+		a, b=b ,a+b
+		#Get the user input for the limit
+limit = int(input("Enter the limit: "))
+print("Fibonacci sequence up to {}: ".format(limit))
+for num in fibonacci(limit):
+	print(num)

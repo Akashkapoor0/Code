@@ -1,0 +1,4 @@
+from functools import reduce
+N=int(input("N: "))
+sum_natural=reduce (lambda x, y: x+y, range(1, N+1))
+print("Sum:", sum_natural)

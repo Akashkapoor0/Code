@@ -1,0 +1,54 @@
+from abc import ABC, abstractmethod
+class Vehicle():
+	def __init__(self, mk, md, yr, pr):
+		self.mk = mk
+		self.md = md
+		self.yr = yr
+		self.pr = pr
+	def details(self):
+		pass
+class Car(Vehicle):
+	def __init__(self, mk, md, yr, pr, drs):
+		super().__init__(mk, md, yr, pr)
+		self.drs = drs
+	def dtl(self):
+		print(f"Make: {self.mk}")
+		print(f"Model: {self.md}")
+		print(f"Year: {self.yr}")
+		print(f"Price: {self.pr}")
+		print(f"Number of doors: {self.drs}")
+class Motorcycle(Vehicle):
+	def __init__(self, mk, md, yr, pr, egsz):
+		super().__init__(mk, md, yr, pr)
+		self.egsz = egsz
+	def dtl(self):
+		print(f"Make: {self.mk}")
+		print(f"Model: {self.md}")
+		print(f"Year: {self.yr}")
+		print(f"Price: {self.pr}")
+		print(f"Engine size: {self.egsz}")
+class Truck(Vehicle):
+	def __init__(self, mk, md, yr, pr, pc):
+		super().__init__(mk, md, yr, pr)
+		self.pc = pc
+	def dtl(self):
+		print(f"Make: {self.mk}")
+		print(f"Model: {self.md}")
+		print(f"Year: {self.yr}")
+		print(f"Price: {self.pr}")
+		print(f"Payload capacity: {self.pc}")
+vt = input("Enter type of vehicle (c/m/t): ")
+mk = input("Enter make of vehicle: ")
+ml = input("Enter model of vehicle: ")
+yr = int(input("Enter year of vehicle: "))
+pr = int(input("Enter price of vehicle: "))
+if vt == 'c':
+	drs = int(input("Enter number of doors of car: "))
+	vh = Car(mk, ml, yr, pr, drs)
+elif vt == 'm':
+	ez = int(input("Enter engine size of motorcycle: "))
+	vh = Motorcycle(mk, ml, yr, pr, ez)
+elif vt == 't':
+	pc = int(input("Enter payload capacity of truck: "))
+	vh = Truck(mk, ml, yr, pr, pc)
+vh.dtl()

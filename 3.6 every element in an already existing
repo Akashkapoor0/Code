@@ -1,0 +1,4 @@
+#print(new_list)
+existing_list = input("Enter a list of elements: ").split()
+new_list = [word [0] for word in existing_list]
+print(new_list)
